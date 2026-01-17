@@ -1,0 +1,35 @@
+{% extends "website/base.html" %}
+    {% load static %}
+    {% block title %}
+        Home
+    {% endblock  %}
+
+    {% block content %}
+        <section class="hero">
+            <div class="hero-content">
+                    <h1>Excellence in Coaching for a Brighter Future</h1>
+                    <p>Providing quality education and personalized guidance in Bhopal since 2015.</p>
+                <div class="hero-buttons">
+                    <a href="{% url 'courses' %}" class="btn-primary">Explore Courses</a>
+                    <a href="{% url 'contact' %}" class="btn-secondary">Inquire Now</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Students Taught</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">95%</span>
+                <span class="stat-label">Success Rate</span>
+            </div>
+        </section>   
+
+
+    {% endblock  %}

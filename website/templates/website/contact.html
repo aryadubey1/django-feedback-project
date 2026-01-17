@@ -1,0 +1,17 @@
+{% extends "website/base.html" %}
+    {% block title %}
+        Contact
+    {% endblock  %}
+
+    {% block content %}
+        <h1>Contact Us</h1>
+
+        {% if success %}
+            <p style='color-green;'>Thankyou! Your message has been sent successfully.</p>
+        {% else %}
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }} <button type='submit'>Send Message</button>
+        </form>
+        {% endif %}
+    {% endblock  %}

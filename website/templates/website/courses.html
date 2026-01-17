@@ -1,0 +1,23 @@
+{% extends "website/base.html" %}
+    {% block title %}
+        Courses
+    {% endblock  %}
+
+    {% block content %}
+        <h1>Our Available Courses</h1>
+
+        <div class="courses_grid">
+            {% for course in courses %}
+                <div class="course_card">
+                    <h2>{{ course.title }}</h2>
+                    <p>{{ course.description }}</p>
+                    <p><strong>Teacher:</strong>{{ course.teacher_name }}</p>
+                    <p><strong>Price:₹</strong>:{{ course.price }}</p>
+                </div>
+            {% empty %}
+                <p>No courses are currently available. Check back soon!</p>
+            {% endfor %}
+        </div>
+
+            
+    {% endblock  %}
