@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Tuition Center{% endblock %}</title>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -35,25 +35,37 @@
     </main>
 
    <footer>
-        <div class="footer-container">
-            <div class="footer-info">
-                <h3>Rajak's Coaching Classes</h3>
-                <p>Bhopal, Madhya Pradesh</p>
-                <p>Email: akashrajak29@gmail.com</p>
-                <p>Phone: +91 79872 31434</p>
+        <div class="footer-container-grid">
+            <div class="footer-section">
+                <h3 class="footer-title">Rajak's Coaching Classes</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Bhopal, Madhya Pradesh</p>
+                <p><i class="fas fa-envelope"></i> akashrajak29@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +91 79872 31434</p>
             </div>
-            <div class="footer-links">
+
+            <div class="footer-section">
                 <h4>Quick Links</h4>
-                <ul>
+                <ul class="footer-links-list">
                     <li><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="{% url 'courses' %}">Courses</a></li>
-                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                    <li><a href="{% url 'courses' %}">Our Courses</a></li>
+                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
                 </ul>
             </div>
+
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/rajakakash" class="social-icon instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@akashrajak7758" class="social-icon youtube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                </div>
+                <p class="social-tagline">Stay updated with class schedules.</p>
+            </div>
         </div>
-    <div class="footer-bottom">
+    
+        <div class="footer-bottom">
         <p>&copy; 2026 Rajak's Coaching Classes Bhopal. All Rights Reserved.</p>
-    </div>
+        </div>
     </footer>
 
     <script src="{% static 'website/js/script.js' %}"></script>

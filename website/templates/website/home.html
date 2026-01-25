@@ -31,5 +31,25 @@
             </div>
         </section>   
 
+        <section class="testimonials">
+            <h2 class="section-title">What our Students Say</h2>
+            <div class="testimonial-grid">
+                {% for t in testimonials %}
+                <div class="testimonial_card">
+                    <p class="quote">{{ t.review_text }}</p>
+                </div>
+                <div class="student-info">
+                    <h4>{{t.student_name}}</h4>
+                    <span>{{t.course_taken}}</span>
+                </div>
+                <div class="stars">
+                    {% for i in '12345' %}
+                    <span class="star">★</span>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
 
     {% endblock  %}

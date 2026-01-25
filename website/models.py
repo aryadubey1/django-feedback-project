@@ -21,3 +21,12 @@ class ContactMessage(models.Model):
     
 
 
+class Testimonials(models.Model):
+    student_name = models.CharField(max_length=100)
+    course_taken = models.CharField(max_length=100)
+    review_text = models.TextField()
+    rating = models.IntegerField(default=5)
+    date_posted = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Review by {self.student_name}"
