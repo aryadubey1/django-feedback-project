@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 from .models import Course, Testimonials
 from .forms import ContactForm
 import requests
+from django.http import HttpResponse
+from django.contrib.auth.models import User
 
 def home(request):
     testimonials = Testimonials.objects.all().order_by('-date_posted')[:3]
@@ -51,3 +53,14 @@ def courses(request):
 
     return render(request, 'website/courses.html', {'courses' : all_courses})
 
+
+
+def create_emergency_admin(request):
+    try:
+        if not User.objects.filter(username='render_admin').exists():
+            User.objects.create_superuser('render_admin', 'admin@example.com', 'TemporaryPass123!')
+            return HttpResponse("Success: User 'render_admin' created.")
+        else:
+            return HttpResponse("User already exist!.")
+    except Exception as e:
+        return HttpResponse(f"Error: {str(e)}")
