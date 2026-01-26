@@ -55,12 +55,12 @@ def courses(request):
 
 
 
-def create_emergency_admin(request):
-    try:
-        if not User.objects.filter(username='render_admin').exists():
-            User.objects.create_superuser('render_admin', 'admin@example.com', 'TemporaryPass123!')
-            return HttpResponse("Success: User 'render_admin' created.")
-        else:
-            return HttpResponse("User already exist!.")
-    except Exception as e:
-        return HttpResponse(f"Error: {str(e)}")
+# def create_emergency_admin(request):
+#     try:
+#         if not User.objects.filter(username='render_admin').exists():
+#             User.objects.create_superuser('render_admin', 'admin@example.com', 'TemporaryPass123!')
+#             return HttpResponse("Success: User 'render_admin' created.")
+#         else:
+#             return HttpResponse("User already exist!.")
+#     except Exception as e:
+#         return HttpResponse(f"Error: {str(e)}")
